@@ -1,13 +1,43 @@
-# Sample Hardhat Project
+# Transparent Proxy
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+This repository contains a simple implementation of a **Transparent Proxy** pattern in Solidity. Transparent proxies allow contract upgrades while preserving user-facing functionality, making them a common choice for upgradeable smart contracts.
 
-Try running some of the following tasks:
+## Features
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
+- Implements the **Transparent Proxy Pattern**.
+- Allows contract upgrades via an admin-controlled mechanism.
+- Ensures only the proxy admin can perform upgrades.
+- Maintains separate execution paths for the admin and users.
+
+## Getting Started
+
+### Prerequisites
+
+- **Node.js** and **npm/yarn** installed.
+- **Hardhat** for Solidity development.
+
+### Installation
+
+Clone the repository and install dependencies:
+
+```sh
+git clone https://github.com/Kouroshnj/Transparent-Proxy.git
+cd Transparent-Proxy
+npm install
+```
+### Usage
+
+1. Compile the Contracts
+```sh
+npx hardhat compile
+```
+
+2 . Deploy to a Local Network
+```sh
 npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
+```
+
+3. Run scripts
+```sh
+npx hardhat run ./scripts/upgradeLogicAddress.js 
 ```
